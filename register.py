@@ -31,6 +31,8 @@ def handle_register_minute(ack, body, say):
         #say(GLOBAL_MINUTE)
     ack()
     
+#
+
 @app.action("register_date")
 def check_register_date(ack, body, say):
     global GLOBAL_YEAR, GLOBAL_MONTH, GLOBAL_DAY, GLOBAL_DAY, GLOBAL_HOUR, GLOBAL_MINUTE
