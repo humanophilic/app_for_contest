@@ -24,6 +24,7 @@ def send_message_from_json(json_file_path, channel_id):
 def select_date(say):
     send_message_from_json("JSON/register_date.json","C05A7G0ARB7")
 
+#選択した日付の抽出
 @app.action("select_date")
 def handle_register_hour(ack, body, say):
     global GLOBAL_DATE
@@ -35,6 +36,7 @@ def handle_register_hour(ack, body, say):
     global GLOBAL_YEAR, GLOBAL_MONTH, GLOBAL_DAY
     GLOBAL_YEAR, GLOBAL_MONTH, GLOBAL_DAY = GLOBAL_DATE.split("-")
 
+#選択した時間の抽出
 @app.action("select_hour")
 def handle_register_hour(ack, body, say):
     global GLOBAL_HOUR
@@ -44,6 +46,7 @@ def handle_register_hour(ack, body, say):
         #say(GLOBAL_HOUR)
     ack()
 
+#選択した分の抽出
 @app.action("select_minute")
 def handle_register_minute(ack, body, say):
     global GLOBAL_MINUTE
@@ -53,6 +56,7 @@ def handle_register_minute(ack, body, say):
         #say(GLOBAL_MINUTE)
     ack()
     
+#送信ボタンを押したときの処理
 @app.action("register_date")
 def check_register_date(ack, body, say):
     global GLOBAL_YEAR, GLOBAL_MONTH, GLOBAL_DAY, GLOBAL_DAY, GLOBAL_HOUR, GLOBAL_MINUTE
